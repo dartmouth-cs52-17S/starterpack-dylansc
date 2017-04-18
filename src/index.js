@@ -12,3 +12,12 @@ setInterval(() => {
 }, 1000);
 
 $('#main').html('Here we go!');
+
+
+// /TIM VERSION
+// let count = 0;
+// function update() {
+//   $('#main').html(count);
+//   count++;
+// }
+// setInterval(update, 1000);
