@@ -1,23 +1,32 @@
 {
-  "name": "test",
+  "name": "starterpack-justkdeng",
   "version": "1.0.0",
-  "description": "sa3",
+  "description": "node project",
   "main": "src/index.js",
   "scripts": {
+    "start": "NODE_ENV=development & webpack-dev-server --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development webpack-dev-server --inline --hot",
-    "build": "WEBPACK_ENV=production webpack --colors",
+    "build": "WEBPACK_ENV=production & webpack --colors",
     "clean": "rimraf public/build",
-    "deploy": "npm run build; gh-pages -d public; npm run clean"
+    "deploy": "npm run build & gh-pages -d public & npm run clean",
+    "surge": "npm run build & surge -p public -d starterpack-justkdeng.surge.sh & npm run clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dartmouth-cs52-17S/starterpack-justkdeng.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dartmouth-cs52-17S/starterpack-justkdeng/issues"
+  },
+  "homepage": "https://github.com/dartmouth-cs52-17S/starterpack-justkdeng#readme",
   "devDependencies": {
     "autoprefixer": "^6.7.7",
     "babel-core": "^6.24.1",
-    "babel-eslint": "^7.2.2",
+    "babel-eslint": "^7.2.3",
     "babel-loader": "^6.4.1",
-    "babel-preset-env": "^1.3.3",
+    "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
@@ -31,16 +40,16 @@
     "postcss-loader": "^1.3.3",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
-    "webpack": "^2.3.3",
-    "webpack-dev-server": "^2.4.2"
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.4"
   },
   "dependencies": {
-    "axios": "^0.16.1",
     "jquery": "^3.2.1",
-    "lodash.debounce": "^4.0.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^4.1.1",
+    "axios": "^0.16.1",
+    "lodash.debounce": "^4.0.8"
   }
 }

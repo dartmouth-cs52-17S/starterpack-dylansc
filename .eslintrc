@@ -12,8 +12,6 @@
         "react/prop-types": 0,
         "react/jsx-first-prop-new-line": 0,
         "react/jsx-filename-extension": 0,
-        "react/prefer-stateless-function": 0,
-        "jsx-a11y/no-static-element-interactions": 0,
         "import/no-unresolved": [2, { "commonjs": true, "caseSensitive": false}],
         "strict": 0,
         "quotes": [2, "single"],
@@ -31,7 +29,7 @@
           0,
           "DebuggerStatement"
         ],
-        "no-debugger": "warn"
+        "no-debugger": "warn",
     },
     "plugins": [
         "react"
