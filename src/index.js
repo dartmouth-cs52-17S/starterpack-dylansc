@@ -1,16 +1,35 @@
 import ReactDOM from 'react-dom';
 import { Switch, BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-// import Switch from 'react-router-dom';
 import React from 'react';
-import './style.scss';
-// import ReactDOM from 'react-dom';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { Provider } from 'react-redux';
+import Controls from './containers/controls';
+import Counter from './containers/counter';
 
+import './style.scss';
+import reducers from './reducers';
+
+// import App from './components/app';
+
+
+// import ReactDOM from 'react-dom';
+// this creates the store with the reducers, and does some other stuff to initialize devtools
+const store = createStore(reducers, {}, compose(
+  applyMiddleware(),
+  window.devToolsExtension ? window.devToolsExtension() : f => f,
+));
 
 const About = (props) => {
   return <div> All there is to know about me </div>;
 };
 const Welcome = (props) => {
-  return <div>Welcome</div>;
+  return (
+    <div>
+      <div>Welcome</div>
+      <Counter />
+      <Controls />
+    </div>
+  );
 };
 
 const Nav = (props) => {
@@ -50,8 +69,11 @@ const App = (props) => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('main'));
-
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+, document.getElementById('main'));
 
 // /TIM VERSION
 // let count = 0;
